@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Show/Hide</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<button ng-click="clicked()">Click me!!!</button>
+		<div ng-show="showMe">
+			<h1>Menu</h1>
+			<p>Pizza</p>
+			<p>Burger</p>
+			<p>Pepper Chicken</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope){
+			$scope.showMe = false;
+			$scope.clicked = function(){
+				$scope.showMe = !$scope.showMe;
+			}
+		})
+	</script>
+</body>
+</html>

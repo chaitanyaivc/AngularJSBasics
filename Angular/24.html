@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Array in scope</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<ul>
+			<li ng-repeat="x in array">
+				{{ x }}
+			</li>
+		</ul>
+	</div>
+	<script>
+		var app = angular.module("myApp",[]);
+		app.controller('myC',function($scope){
+			$scope.array = ["IVC","BVR","BMM","CLC"];
+		})
+	</script>
+</body>
+</html>

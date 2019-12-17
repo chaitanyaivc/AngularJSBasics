@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Response options</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<h1>Content:   {{ content }}</h1>
+		<h1>Status code:   {{ statuscode }}</h1>
+		<h1>Status text:   {{ statustext }}</h1>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope, $http){
+			$http.get("https://www.w3schools.com/angular/welcome.htm").then(function(response){
+				$scope.content = response.data;
+				$scope.statuscode = response.status;
+				$scope.statustext = response.statusText;
+			});
+		});
+	</script>
+</body>
+</html>

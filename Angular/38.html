@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Abs URL</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<h1>URL of this page is:  </h1>
+		<h1>{{ myUrl }}</h1>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope, $location){
+			$scope.myUrl = $location.absUrl();
+		});
+	</script>
+</body>
+</html>

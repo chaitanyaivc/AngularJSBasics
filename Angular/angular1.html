@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Listssss</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+	<script src="angular1.js"></script>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController">
+		<br><br>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date Of Birth</th>
+					<th>Gender</th>
+					<th>Salary</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | orderBy: 'name': true">
+					<td>{{ employee.name | uppercase }}</td>
+					<td>{{ employee.dateOfBirth | date : "dd/MM/yyyy"}}</td>
+					<td>{{ employee.salary | currency:"$":1 }}</td>
+					<td>{{ employee.gender }}</td>
+				</tr>
+			</tbody>
+		</table>		
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Currency</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<p>Currency is: {{ price | currency }}</p>
+	</div>
+	<script type="text/javascript">
+		angular.module("myApp",[]).controller("myC",function($scope){
+			$scope.price = 100;
+		});
+	</script>
+</body>
+</html>

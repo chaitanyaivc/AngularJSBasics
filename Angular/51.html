@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Co-ordinates</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<h1 ng-mousemove="mevent($event)">Mouse over me!!!</h1>
+		<p>Coordinates are::</p>
+		<h2>{{ x + " " + y }}</h2>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope){
+			$scope.mevent = function(cod){
+				$scope.x = cod.clientX;
+				$scope.y = cod.clientY;
+			}
+		});
+	</script>
+</body>
+</html>

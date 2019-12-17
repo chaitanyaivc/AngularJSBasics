@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Obj rep</title>
+</head>
+<body>
+	<div ng-app="" ng-init="names=[
+			{name:'IVC',country:'INDIA'},
+			{name:'Ramana',country:'INDIA'},
+			{name:'Miky',country:'USA'}]">
+	<h1>Looping with objects</h1>
+	<ul>
+		<li ng-repeat="x in names">
+			{{ x.name + ", " + x.country }}
+		</li>
+	</ul>
+	</div>
+</body>
+</html>

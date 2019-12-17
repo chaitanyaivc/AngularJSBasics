@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Button Click</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<button ng-click="clicked()">Click me!!</button>
+		<h2>{{ count }}</h2>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope){
+			$scope.count = 0;
+			$scope.clicked = function(){
+				$scope.count++;
+			}
+		})
+	</script>
+</body>
+</html>

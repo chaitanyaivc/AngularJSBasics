@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>http methods</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<h1>{{ myMessage }}</h1>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope, $http){
+			$http({
+				method: "GET",
+				url: "https://www.w3schools.com/angular/welcome.htm"
+			}).then(function mySuccess(response){
+				$scope.myMessage = response.data;
+			},function myError(response){
+				$scope.myMessage = response.statusText;
+			});
+		});
+	</script>
+</body>
+</html>

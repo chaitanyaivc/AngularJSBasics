@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title>Response</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myC">
+		<table border="20">
+			<tr ng-repeat="x in names">
+				<td>{{ x.Name }}</td>
+				<td>{{ x.Country }}</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.controller("myC",function($scope, $http){
+			$http.get("https://www.w3schools.com/angular/customers.php")
+				.then(function(response){
+					$scope.names = response.data.records;
+				});
+		});
+	</script>
+</body>
+</html>

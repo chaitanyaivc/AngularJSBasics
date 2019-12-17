@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<title></title>
+</head>
+<body>
+	<div ng-app="" ng-init="quantity=1;cost=5">
+		<h2>Cost calculator</h2>
+		<p>Quantity:<input type="number" ng-model="quantity">
+			Cost:<input type="number" ng-model="cost"></p>
+		<p><b>Total is: </b>{{ quantity * cost }}</p>
+	</div>
+</body>
+</html>
